@@ -7,10 +7,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-dotnet@v2
         with: 
           dotnet-version: '6.0.x'
       - run: dotnet build
+      - uses: actions/upload-artifact@v3.1.2
+        with:
+          name: VhdTools
+          path: .
