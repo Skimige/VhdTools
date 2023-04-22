@@ -14,8 +14,8 @@ jobs:
         with: 
           dotnet-version: '6.0.x'
       - run: dotnet build
-      - run: dotnet build --configuration Release
-      - run: dotnet publish
+      - run: dotnet build -c Release
+      - run: dotnet publish -c Release -f net6.0
       - uses: actions/upload-artifact@v3.1.2
         with:
           name: VhdTools
